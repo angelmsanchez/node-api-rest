@@ -1,6 +1,12 @@
 {
   "name": "node-api-rest",
-  "version": "2.0.0",
+  "version": "1.0.0",
+  "description": "App with Nodejs for mock app Angular 2",
+  "author": "Angel Muñoz Sanchez",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/angelmsanchez/node-api-rest"
+  },
   "dependencies": {
     "mongoose": "~3.6.11",
     "express": "^4.7.1",

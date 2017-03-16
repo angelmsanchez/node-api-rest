@@ -7,10 +7,11 @@ var http = require("http");
 var app = express();
 
 // Connection to DB
-// mongoose.connect('mongodb://localhost/tvshows', function (err, res) {
-//   if (err) throw err;
-//   console.log('Connected to Database');
-// });
+mongoose.connect('mongodb://localhost/bmeapa', function (err, res) {
+  console.log('Connected to Database 1');
+  if (err) throw err;
+  console.log('Connected to Database 2');
+});
 
 // Middlewares
 app.use(bodyParser.urlencoded({
@@ -20,14 +21,19 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 // Import Models and controllers
-var models = require('./models/tvshow')(app, mongoose);
-var TVShowCtrl = require('./controllers/tvshows');
+var models = require('./models/tvshow.model')(app, mongoose);
+var db = require('./db/db');
+var TVShowCtrl = require('./controllers/tvshow.controller');
 
 // Example Route
 var router = express.Router();
 router.get('/', function (req, res) {
-  res.send("Hello world!");
+  res.json(db);
 });
+router.route('/esis')
+  .get(TVShowCtrl.findEsis, function (req, res) {
+    res.send(" esis!");
+  });
 app.use(router);
 
 // API routes
@@ -36,6 +42,11 @@ var tvshows = express.Router();
 tvshows.route('/tvshows')
   .get(TVShowCtrl.findAllTVShows)
   .post(TVShowCtrl.addTVShow);
+
+tvshows.route('/esis')
+  .get(TVShowCtrl.findEsis, function (req, res) {
+    res.send("Hello world esis!");
+  });
 
 tvshows.route('/tvshows/:id')
   .get(TVShowCtrl.findById)
