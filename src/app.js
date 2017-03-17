@@ -7,11 +7,11 @@ var http = require("http");
 var app = express();
 
 // Connection to DB
-mongoose.connect('mongodb://localhost/bmeapa', function (err, res) {
-  console.log('Connected to Database 1');
-  if (err) throw err;
-  console.log('Connected to Database 2');
-});
+// mongoose.connect('mongodb://localhost/bmeapa', function (err, res) {
+//   console.log('Connected to Database 1');
+//   if (err) throw err;
+//   console.log('Connected to Database 2');
+// });
 
 // Middlewares
 app.use(bodyParser.urlencoded({
@@ -21,15 +21,21 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 // Import Models and controllers
-var models = require('./models/tvshow.model')(app, mongoose);
-var db = require('./db/db');
+var tvshowModel = require('./models/tvshow.model')(app, mongoose);
+var loginModel = require('./models/login.model')(app, mongoose);
+var db = require('./mocks/db');
 var TVShowCtrl = require('./controllers/tvshow.controller');
+var loginController = require('./controllers/login.controller');
 
 // Example Route
 var router = express.Router();
 router.get('/', function (req, res) {
   res.json(db);
 });
+
+router.route('/login')
+  .post(loginController.login);
+
 router.route('/esis')
   .get(TVShowCtrl.findEsis, function (req, res) {
     res.send(" esis!");

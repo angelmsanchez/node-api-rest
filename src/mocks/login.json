@@ -1,0 +1,19 @@
+{
+  "id": 77,
+  "email": "angel@test.com",
+  "name": "Angel",
+  "nameEsi": "SANTANDER",
+  "phone": "123456789",
+  "status": 1,
+  "products": [{
+    "name": "apa",
+    "value": true
+  }, {
+    "name": "arm",
+    "value": true
+  }, {
+    "name": "si",
+    "value": true
+  }],
+  "userType": "admin"
+}
