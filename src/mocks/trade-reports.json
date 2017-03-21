@@ -1,0 +1,32 @@
+  {
+    "total": 2,
+    "elements": [{
+        "id": 1,
+        "tradeReportId": 1,
+        "tradeId": "12345678901234567890123456780123456789",
+        "securityId": "ES0178430E18",
+        "lastPx": 15.15,
+        "currency": "EUR",
+        "lastQty": 1000,
+        "status": 0,
+        "transactTime": "2015-08-18T13:31:17",
+        "apaLastUpdate": "2015-08-18T13:31:17",
+        "matchType": "1",
+        "priceType": 1
+      },
+      {
+        "id": 2,
+        "tradeReportId": 2,
+        "tradeId": "43215678123434645656905e4325464604482",
+        "securityId": "ES0113900J37",
+        "lastPx": 7.08,
+        "currency": "USD",
+        "lastQty": 100,
+        "status": 1,
+        "transactTime": "2016-08-18T13:31:17",
+        "apaLastUpdate": "2016-08-18T13:31:17",
+        "matchType": "9",
+        "priceType": 3
+      }
+    ]
+  }
