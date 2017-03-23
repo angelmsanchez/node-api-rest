@@ -1,0 +1,110 @@
+ {
+   "total": 2,
+   "elements": [{
+       "id": 1,
+       "name": "Pepita García",
+       "types": [{
+         "name": "commercial",
+         "value": true
+       }],
+       "email": "pepita@grupobbva.com",
+       "phone": "+34902111222"
+     },
+     {
+       "name": "gabriel",
+       "email": "ggarciaseco@gmail.com",
+       "esi": "Cachopo",
+       "password": "",
+       "senderCompId": "",
+       "targetCompId": "",
+       "phone": "654654654",
+       "status": 1,
+       "products": [{
+           "name": "apa",
+           "value": false
+         },
+         {
+           "name": "arm",
+           "value": false
+         },
+         {
+           "name": "si",
+           "value": false
+         }
+       ],
+       "types": [{
+           "name": "commercial",
+           "value": true
+         },
+         {
+           "name": "technician",
+           "value": true
+         },
+         {
+           "name": "director",
+           "value": false
+         },
+         {
+           "name": "others",
+           "value": false
+         }
+       ],
+       "surname": "garcia",
+       "street": "leopoldo alas clarin",
+       "city": "gijon",
+       "province": "asturias",
+       "postalCode": "33940",
+       "country": "españa",
+       "language": "es",
+       "id": 2
+     },
+     {
+       "name": "Nuevo contacto",
+       "email": "ggarciaseco@gmail.com",
+       "esi": "CA",
+       "password": "",
+       "senderCompID": "",
+       "targetCompID": "",
+       "phone": "654654654",
+       "status": 0,
+       "language": "es",
+       "products": [{
+           "name": "apa",
+           "value": false
+         },
+         {
+           "name": "arm",
+           "value": false
+         },
+         {
+           "name": "si",
+           "value": false
+         }
+       ],
+       "types": [{
+           "name": "commercial",
+           "value": true
+         },
+         {
+           "name": "technician",
+           "value": true
+         },
+         {
+           "name": "director",
+           "value": false
+         },
+         {
+           "name": "others",
+           "value": false
+         }
+       ],
+       "surname": "nueva",
+       "street": "leopoldo alas clarin",
+       "city": "gijon",
+       "province": "asturias",
+       "postalCode": "33940",
+       "country": "españa",
+       "id": 3
+     }
+   ]
+ }

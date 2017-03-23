@@ -1,0 +1,9 @@
+[{
+    "equityType": "1",
+    "securityId": "123456789012"
+  },
+  {
+    "equityType": "0",
+    "securityId": "012345678901"
+  }
+]

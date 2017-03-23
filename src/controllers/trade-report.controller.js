@@ -1,5 +1,3 @@
-var mongoose = require('mongoose');
-var tradeReportModel = mongoose.model('TradeReportModel');
 var tradeReportsMock = require('./../mocks/trade-reports');
 
 //GET - Return all tradeReports 
@@ -18,15 +16,13 @@ exports.addTradeReport = function (req, res) {
 };
 
 //PUT - Return all tradeReports 
-exports.cancelTradeReport = function (req, res) {
+exports.updateTradeReport = function (req, res) {
   console.log('PUT TRADE-REPORT');
-  req.body.status = 2;
   tradeReportsMock['elements'].map(tradeReport => {
-    if (tradeReport.tradeId === req.body.tradeId) {
-      return req.body;
-    } else {
-      return tradeReport;
+    if (tradeReport.tradeId === req.params.tradeId) {
+      tradeReport.status = 2;
     }
+    return tradeReport;
   });
   res.status(200).jsonp(req.body);
 };

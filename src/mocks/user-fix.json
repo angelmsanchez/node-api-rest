@@ -1,0 +1,85 @@
+{
+  "total": 2,
+  "elements": [{
+      "id": 2,
+      "targetCompID": "BMEAPABBVA",
+      "senderCompID": "BBVA01",
+      "status": 1
+    },
+    {
+      "name": "",
+      "email": "",
+      "esi": "CA",
+      "password": "30300303",
+      "senderCompID": "Nuevo usuario",
+      "targetCompID": "303003",
+      "phone": "",
+      "status": 0,
+      "language": "",
+      "products": [{
+        "name": "apa",
+        "value": true
+      }],
+      "types": [{
+          "name": "commercial",
+          "value": false
+        },
+        {
+          "name": "technician",
+          "value": false
+        },
+        {
+          "name": "director",
+          "value": false
+        },
+        {
+          "name": "others",
+          "value": false
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "",
+      "email": "",
+      "esi": "CT",
+      "password": "test",
+      "senderCompID": "test",
+      "targetCompID": "test",
+      "phone": "",
+      "status": 0,
+      "language": "",
+      "products": [{
+          "name": "apa",
+          "value": false
+        },
+        {
+          "name": "arm",
+          "value": false
+        },
+        {
+          "name": "si",
+          "value": false
+        }
+      ],
+      "types": [{
+          "name": "commercial",
+          "value": false
+        },
+        {
+          "name": "technician",
+          "value": false
+        },
+        {
+          "name": "director",
+          "value": false
+        },
+        {
+          "name": "others",
+          "value": false
+        }
+      ],
+      "id": 4
+    }
+  ]
+}

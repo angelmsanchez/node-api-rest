@@ -1,0 +1,21 @@
+[{
+    "name": "Proceso 1",
+    "state": false,
+    "enviroment": "BACKEND_DEV"
+  },
+  {
+    "name": "Proceso 2",
+    "state": true,
+    "enviroment": "BACKEND_DEV"
+  },
+  {
+    "name": "Proceso 3",
+    "state": true,
+    "enviroment": "BACKEND_IC"
+  },
+  {
+    "name": "Proceso 4",
+    "state": false,
+    "enviroment": "BACKEND_IC"
+  }
+]

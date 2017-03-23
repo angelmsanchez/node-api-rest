@@ -1,0 +1,54 @@
+   {
+     "total": 2,
+     "elements": [{
+         "id": "CA",
+         "code": "CA",
+         "name": "Cachopo",
+         "cif": "CAPI",
+         "street": "C/ BME 23",
+         "city": "Majadahonda",
+         "province": "Madrid",
+         "country": "España",
+         "postalCode": 28035,
+         "status": 0,
+         "products": [{
+             "name": "apa",
+             "value": true
+           },
+           {
+             "name": "arm",
+             "value": true
+           },
+           {
+             "name": "si",
+             "value": false
+           }
+         ]
+       },
+       {
+         "id": "CT",
+         "code": "CT",
+         "name": "CACHOPO T TEAM",
+         "cif": "5050505050",
+         "street": "Castellana",
+         "city": "Madrid",
+         "province": "Madrid",
+         "country": "España",
+         "postalCode": "28000",
+         "status": 1,
+         "products": [{
+             "name": "apa",
+             "value": true
+           },
+           {
+             "name": "arm",
+             "value": false
+           },
+           {
+             "name": "si",
+             "value": true
+           }
+         ]
+       }
+     ]
+   }

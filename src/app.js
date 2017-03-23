@@ -20,38 +20,43 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-// Import Models
-var tvshowModel = require('./models/tvshow.model')(app, mongoose);
-var loginModel = require('./models/login.model')(app, mongoose);
-var tradeReportModel = require('./models/trade-report.model')(app, mongoose);
-var db = require('./mocks/db');
-
 // Import Controllers
-var TVShowCtrl = require('./controllers/tvshow.controller');
 var loginController = require('./controllers/login.controller');
 var tradeReportController = require('./controllers/trade-report.controller');
+var esiController = require('./controllers/esi.controller');
+var currencyController = require('./controllers/currency.controller');
+var isinController = require('./controllers/isin.controller');
+var processController = require('./controllers/process.controller');
 
 // Example Route
 var router = express.Router();
-router.get('/', function (req, res) {
-  res.json(db);
-});
 
 router.route('/login')
   .post(loginController.login);
 
+router.route('/currencies')
+  .get(currencyController.getCurrencies);
+
+router.route('/validate')
+  .get(isinController.getIsin);
+
+router.route('/process')
+  .get(processController.getProcess);
+
 router.route('/trade-reports')
   .get(tradeReportController.listTradeReport)
-  .post(tradeReportController.addTradeReport)
-  .put(tradeReportController.cancelTradeReport);
+  .post(tradeReportController.addTradeReport);
 
 router.route('/trade-reports/:tradeId')
-  .get(tradeReportController.detailTradeReport);
+  .get(tradeReportController.detailTradeReport)
+  .put(tradeReportController.updateTradeReport);
 
 router.route('/esis')
-  .get(TVShowCtrl.findEsis, function (req, res) {
-    res.send(" esis!");
-  });
+  .get(esiController.listEsi)
+  .post(esiController.addEsi);
+
+router.route('/esis/:id')
+  .get(esiController.detailEsi);
 
 // Add headers
 app.use(function (req, res, next) {
@@ -63,9 +68,8 @@ app.use(function (req, res, next) {
 
   // Request headers you wish to allow
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
-  
+
   // Set to true if you need the website to include cookies in the requests sent
-  // to the API (e.g. in case you use sessions)
   res.setHeader('Access-Control-Allow-Credentials', true);
 
   // Pass to next layer of middleware

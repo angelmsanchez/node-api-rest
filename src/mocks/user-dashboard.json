@@ -1,0 +1,80 @@
+{
+  "total": 2,
+  "elements": [{
+      "name": "Gabriel",
+      "email": "ggarciaseco@gmail.com",
+      "esi": "CA",
+      "password": "temporal",
+      "senderCompID": "",
+      "targetCompID": "",
+      "phone": "655655655",
+      "status": 0,
+      "language": "",
+      "products": [{
+          "name": "apa",
+          "value": true
+        },
+        {
+          "name": "arm",
+          "value": false
+        }
+      ],
+      "types": [{
+          "name": "commercial",
+          "value": false
+        },
+        {
+          "name": "technician",
+          "value": false
+        },
+        {
+          "name": "director",
+          "value": false
+        },
+        {
+          "name": "others",
+          "value": false
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "Daniel",
+      "email": "daniel@test.com",
+      "esi": "CA",
+      "password": "test",
+      "senderCompID": null,
+      "targetCompID": null,
+      "phone": "",
+      "status": 1,
+      "language": "",
+      "products": [{
+          "name": "apa",
+          "value": true
+        },
+        {
+          "name": "arm",
+          "value": false
+        }
+      ],
+      "types": [{
+          "name": "commercial",
+          "value": false
+        },
+        {
+          "name": "technician",
+          "value": false
+        },
+        {
+          "name": "director",
+          "value": false
+        },
+        {
+          "name": "others",
+          "value": false
+        }
+      ],
+      "id": 3
+    }
+  ]
+}
