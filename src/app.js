@@ -27,6 +27,7 @@ var esiController = require('./controllers/esi.controller');
 var currencyController = require('./controllers/currency.controller');
 var isinController = require('./controllers/isin.controller');
 var processController = require('./controllers/process.controller');
+var userController = require('./controllers/user.controller');
 
 // Example Route
 var router = express.Router();
@@ -37,7 +38,7 @@ router.route('/login')
 router.route('/currencies')
   .get(currencyController.getCurrencies);
 
-router.route('/validate')
+router.route('/trade-reports/validate')
   .get(isinController.getIsin);
 
 router.route('/process')
@@ -57,6 +58,23 @@ router.route('/esis')
 
 router.route('/esis/:id')
   .get(esiController.detailEsi);
+
+router.route('/esis/:id/users/fix')
+  .get(userController.getUserFix);
+
+router.route('/esis/:id/users/db')
+  .get(userController.getUserDashboard);
+
+router.route('/esis/:id/users/contacts')
+  .get(userController.getUserContact);
+
+router.route('/users/admin')
+  .get(userController.getUserAdmin);
+
+router.route('/users/super')
+  .get(userController.getUserSupervisor);
+
+
 
 // Add headers
 app.use(function (req, res, next) {

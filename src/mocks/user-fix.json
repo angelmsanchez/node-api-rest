@@ -14,7 +14,7 @@
       "senderCompID": "Nuevo usuario",
       "targetCompID": "303003",
       "phone": "",
-      "status": 0,
+      "status": 1,
       "language": "",
       "products": [{
         "name": "apa",
@@ -47,7 +47,7 @@
       "senderCompID": "test",
       "targetCompID": "test",
       "phone": "",
-      "status": 0,
+      "status": 1,
       "language": "",
       "products": [{
           "name": "apa",
