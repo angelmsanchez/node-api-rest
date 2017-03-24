@@ -1,0 +1,22 @@
+{
+  "messageType": "NEW_TRADE_REPORT",
+  "message": {
+    "securityIDSource": "4",
+    "securityId": "ES0113900J37",
+    "transactTime": "2017-03-03T21:20:20",
+    "apaLastUpdate": "0001-01-01T00:00:00",
+    "lastQty": 1.0,
+    "currency": "EUR",
+    "status": 0,
+    "lastPx": 4140.99,
+    "venueType": "\u0000",
+    "matchType": "1",
+    "priceType": 1,
+    "qtyType": 0,
+    "sendingTime": "0001-01-01T00:00:00",
+    "codeEsi": "BSAN",
+    "tradeReportTransType": 0
+  },
+  "peer": "BSAN",
+  "errorCode": ""
+}

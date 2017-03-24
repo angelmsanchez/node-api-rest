@@ -9,10 +9,9 @@ exports.listTradeReport = function (req, res) {
 //POST - Return all tradeReports 
 exports.addTradeReport = function (req, res) {
   console.log('POST TRADE-REPORT');
-  req.body.id = Math.random();
-  tradeReportsMock.elements.push(req.body);
+  tradeReportsMock.elements.unshift (req.body ? req.body : req.message);
   tradeReportsMock.total = tradeReportsMock.elements.length;
-  res.status(200).jsonp(req.body);
+  if (res) res.status(200).jsonp(req.body);
 };
 
 //PUT - Return all tradeReports 

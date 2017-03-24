@@ -1,0 +1,27 @@
+{
+  "messageType": "UPDATE_TRADE_REPORT",
+  "message": {
+    "securityIDSource": "4",
+    "securityId": "ES0113211835",
+    "tradeReportId": "MMMMMMMMMM0008",
+    "transactTime": "2017-03-21T16:11:54",
+    "apaLastUpdate": "2017-03-24T10:28:00",
+    "lastQty": 10.00000000000000000,
+    "currency": "EUR",
+    "status": 20,
+    "lastPx": 1600.0000000000000,
+    "tradeId": "XXXX20170324102800078J24C7HJ8A113484",
+    "venueType": "O",
+    "matchType": "9",
+    "priceType": 1,
+    "senderCompId": "ReceiverM",
+    "targetCompID": "SenderM",
+    "senderSubID": "",
+    "qtyType": 0,
+    "sendingTime": "2017-03-24T10:28:00",
+    "firmTradeId": "123",
+    "codeEsi": "BME",
+    "tradeReportTransType": 0
+  },
+  "peer": "BME"
+}

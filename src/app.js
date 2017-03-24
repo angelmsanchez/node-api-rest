@@ -5,6 +5,8 @@ var mongoose = require('mongoose');
 var http = require("http");
 
 var app = express();
+const PORT = 4444;
+const PORT_WEBSOCKET = 3005;
 
 // Connection to DB
 // mongoose.connect('mongodb://localhost/bmeapa', function (err, res) {
@@ -98,6 +100,42 @@ app.use(function (req, res, next) {
 app.use(router);
 
 // Start server
-app.listen(4444, function () {
-  console.log("Node server running on http://localhost:4444");
+app.listen(PORT, function () {
+  console.log(`Node server running on http://localhost:${PORT}`);
 });
+
+var websocket = require('nodejs-websocket');
+//websocket
+var server = websocket.createServer(function (connection) {
+  connection.on('text', function (receive) {
+    // simple object transformation (= add current time)
+    var objectReceive = JSON.parse(receive);
+    typeWebsocket(objectReceive);
+    console.log('despues typewebsocket');
+    var newMsg = JSON.stringify(objectReceive);
+
+    // echo message including the new field to all connected clients
+    server.connections.forEach(function (connection) {
+      connection.sendText(newMsg);
+    });
+  });
+
+  connection.on('close', function (code, reason) {
+    console.log('Connection Websocket closed')
+  });
+}).listen(PORT_WEBSOCKET, function () {
+  console.log(`Websocket running on ws://localhost:${PORT_WEBSOCKET}`);
+});
+
+
+function typeWebsocket(objectReceive) {
+  console.log('Websocket type: ' + objectReceive.messageType);
+  switch (objectReceive.messageType) {
+    case 'NEW_TRADE_REPORT':
+      return tradeReportController.addTradeReport(objectReceive);
+    case 'UPDATE_TRADE_REPORT':
+      return tradeReportController.updateTradeReport(objectReceive);
+    default:
+      break;
+  }
+}
