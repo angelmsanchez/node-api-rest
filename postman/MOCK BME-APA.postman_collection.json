@@ -1,0 +1,316 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MOCK BME-APA",
+		"_postman_id": "8818ca9f-c1ed-d7ee-5a79-ec09e324a45b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ESI",
+			"description": "",
+			"item": [
+				{
+					"name": "List Esis",
+					"request": {
+						"url": "{{env}}/esis?limit=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Detail Esi",
+					"request": {
+						"url": "{{env}}/esis/CA",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TRADE-REPORT",
+			"description": "",
+			"item": [
+				{
+					"name": "Trade Reports",
+					"request": {
+						"url": "{{env}}/trade-reports?limit=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Detail Trade Report",
+					"request": {
+						"url": "{{env}}/trade-reports/12345678901234567890123456780123456789",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Add Trade Report",
+					"request": {
+						"url": "{{env}}/trade-reports",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "      {\r\n        \"tradeReportId\": 22,\r\n        \"tradeId\": \"123456789\",\r\n        \"securityId\": \"ES0113900J37\",\r\n        \"lastPx\": 17.08,\r\n        \"currency\": \"USD\",\r\n        \"lastQty\": 100,\r\n        \"status\": 1,\r\n        \"transactTime\": \"2016-08-18T13:31:17\",\r\n        \"apaLastUpdate\": \"2016-08-18T13:31:17\",\r\n        \"matchType\": \"9\",\r\n        \"priceType\": 3\r\n      }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Trade Report",
+					"request": {
+						"url": "{{env}}/trade-reports/12345678901234567890123456780123456789",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": 2\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TRANSACTION-REPORT",
+			"description": "",
+			"item": [
+				{
+					"name": "Transaction Reports",
+					"request": {
+						"url": "{{env}}/trade-reports?limit=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USERS",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Users FIx",
+					"request": {
+						"url": "{{env}}/esis/CA/users/fix?lmit=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Contacts",
+					"request": {
+						"url": "{{env}}/esis/CA/users/contacts?lmit=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Dashboard",
+					"request": {
+						"url": "{{env}}/esis/CA/users/db?lmit=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Supervisor",
+					"request": {
+						"url": "{{env}}/users/super?lmit=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Admin",
+					"request": {
+						"url": "{{env}}/users/admin?lmit=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"url": "{{env}}/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\" : \"admin@bmeapa.com\",\n\t\"password\" :\"admin\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get currencies",
+			"request": {
+				"url": "{{env}}/currencies",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Isin",
+			"request": {
+				"url": "{{env}}/validate?securityId=CA",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Process",
+			"request": {
+				"url": "{{env}}/process",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -28,6 +28,7 @@ var currencyController = require('./controllers/currency.controller');
 var isinController = require('./controllers/isin.controller');
 var processController = require('./controllers/process.controller');
 var userController = require('./controllers/user.controller');
+var transactionReportController = require('./controllers/transaction-report.controller');
 
 // Example Route
 var router = express.Router();
@@ -74,7 +75,8 @@ router.route('/users/admin')
 router.route('/users/super')
   .get(userController.getUserSupervisor);
 
-
+router.route('/transaction-reports')
+  .get(transactionReportController.listTransactionReport);
 
 // Add headers
 app.use(function (req, res, next) {
