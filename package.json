@@ -7,11 +7,15 @@
   "repository": {
     "url": "https://github.com/angelmsanchez/node-api-rest"
   },
+  "scripts": {
+    "start": "nodemon src/app.js"
+  },
   "dependencies": {
     "body-parser": "^1.5.1",
     "express": "^4.7.1",
     "method-override": "^2.1.2",
     "mongoose": "~3.6.11",
-    "nodejs-websocket": "^1.6.0"
+    "nodejs-websocket": "^1.6.0",
+    "nodemon": "^1.11.0"
   }
 }
