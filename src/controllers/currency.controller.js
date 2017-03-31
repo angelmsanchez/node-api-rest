@@ -1,4 +1,4 @@
-var currencyMock = require('./../mocks/currencies');
+const currencyMock = require('./../mocks/currencies');
 
 //GET - Return all currencies 
 exports.getCurrencies = function (req, res) {

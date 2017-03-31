@@ -8,7 +8,11 @@
     "url": "https://github.com/angelmsanchez/node-api-rest"
   },
   "scripts": {
-    "start": "nodemon src/app.js"
+    "lint": "eslint ./src/**/*.js --color",
+    "lint:watch": "esw ./src/**/*.js --color -w '",
+    "mocks": "nodemon src/app.js ",
+    "start": "npm-run-all --parallel mocks lint:watch",
+    "start-websocket": "nodemon src/app.websocket.js"
   },
   "dependencies": {
     "body-parser": "^1.5.1",
@@ -17,5 +21,13 @@
     "mongoose": "~3.6.11",
     "nodejs-websocket": "^1.6.0",
     "nodemon": "^1.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1",
+    "eslint-watch": "^3.0.1",
+    "npm-run-all": "^4.0.2"
   }
 }

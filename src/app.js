@@ -1,19 +1,18 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var methodOverride = require("method-override");
-var mongoose = require('mongoose');
-var http = require("http");
+const express = require("express");
+const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
+const mongoose = require('mongoose');
+// const http = require("http");
 
-var app = express();
+const app = express();
 const PORT = 4444;
-const PORT_WEBSOCKET = 3005;
 
 // Connection to DB
-// mongoose.connect('mongodb://localhost/bmeapa', function (err, res) {
-//   console.log('Connected to Database 1');
-//   if (err) throw err;
-//   console.log('Connected to Database 2');
-// });
+mongoose.connect('mongodb://<bme-user>:<Cachopo>@ds011321.mlab.com:11321/bme-apa-db', function (err, res) {
+  console.log('Connected to Database 1: ', res);
+  if (err) throw err;
+  console.log('Connected to Database 2: ', err);
+});
 
 // Middlewares
 app.use(bodyParser.urlencoded({
@@ -23,17 +22,17 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 // Import Controllers
-var loginController = require('./controllers/login.controller');
-var tradeReportController = require('./controllers/trade-report.controller');
-var esiController = require('./controllers/esi.controller');
-var currencyController = require('./controllers/currency.controller');
-var isinController = require('./controllers/isin.controller');
-var processController = require('./controllers/process.controller');
-var userController = require('./controllers/user.controller');
-var transactionReportController = require('./controllers/transaction-report.controller');
+const loginController = require('./controllers/login.controller');
+const tradeReportController = require('./controllers/trade-report.controller');
+const esiController = require('./controllers/esi.controller');
+const currencyController = require('./controllers/currency.controller');
+const isinController = require('./controllers/isin.controller');
+const processController = require('./controllers/process.controller');
+const userController = require('./controllers/user.controller');
+const transactionReportController = require('./controllers/transaction-report.controller');
 
 // Example Route
-var router = express.Router();
+const router = express.Router();
 
 router.route('/login')
   .post(loginController.login);
@@ -103,39 +102,3 @@ app.use(router);
 app.listen(PORT, function () {
   console.log(`Node server running on http://localhost:${PORT}`);
 });
-
-var websocket = require('nodejs-websocket');
-//websocket
-var server = websocket.createServer(function (connection) {
-  connection.on('text', function (receive) {
-    // simple object transformation (= add current time)
-    var objectReceive = JSON.parse(receive);
-    typeWebsocket(objectReceive);
-    console.log('despues typewebsocket');
-    var newMsg = JSON.stringify(objectReceive);
-
-    // echo message including the new field to all connected clients
-    server.connections.forEach(function (connection) {
-      connection.sendText(newMsg);
-    });
-  });
-
-  connection.on('close', function (code, reason) {
-    console.log('Connection Websocket closed')
-  });
-}).listen(PORT_WEBSOCKET, function () {
-  console.log(`Websocket running on ws://localhost:${PORT_WEBSOCKET}`);
-});
-
-
-function typeWebsocket(objectReceive) {
-  console.log('Websocket type: ' + objectReceive.messageType);
-  switch (objectReceive.messageType) {
-    case 'NEW_TRADE_REPORT':
-      return tradeReportController.addTradeReport(objectReceive);
-    case 'UPDATE_TRADE_REPORT':
-      return tradeReportController.updateTradeReport(objectReceive);
-    default:
-      break;
-  }
-}

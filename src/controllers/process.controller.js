@@ -1,4 +1,4 @@
-var processMock = require('./../mocks/process');
+const processMock = require('./../mocks/process');
 
 //GET - Return all process 
 exports.getProcess = function (req, res) {

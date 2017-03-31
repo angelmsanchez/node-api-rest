@@ -1,4 +1,4 @@
-var loginMock = require('./../mocks/login');
+const loginMock = require('./../mocks/login');
 
 exports.login = function (req, res) {
   console.log('POST LOGIN');

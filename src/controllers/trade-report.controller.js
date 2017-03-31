@@ -1,4 +1,4 @@
-var tradeReportsMock = require('./../mocks/trade-reports');
+const tradeReportsMock = require('./../mocks/trade-reports');
 
 //GET - Return all tradeReports 
 exports.listTradeReport = function (req, res) {

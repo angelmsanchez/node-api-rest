@@ -1,13 +1,13 @@
 //File: controllers/tvshows.js
-var mongoose = require('mongoose');
-var TVShow = mongoose.model('TVShow');
+const mongoose = require('mongoose');
+const TVShow = mongoose.model('TVShow');
 
 //GET - Return all tvshows in the DB
 exports.findAllTVShows = function (req, res) {
   TVShow.find(function (err, tvshows) {
     if (err) res.send(500, err.message);
 
-    console.log('GET /tvshows')
+    console.log('GET /tvshows');
     res.status(200).jsonp(tvshows);
   });
 };
@@ -17,7 +17,7 @@ exports.findEsis = function (req, res) {
   TVShow.find(function (err, tvshows) {
     if (err) res.send(500, err.message);
 
-    console.log('GET /esis')
+    console.log('GET /esis');
     res.status(200).jsonp(tvshows);
   });
 };
@@ -37,7 +37,7 @@ exports.addTVShow = function (req, res) {
   console.log('POST');
   console.log(req.body);
 
-  var tvshow = new TVShow({
+  const tvshow = new TVShow({
     title: req.body.title,
     year: req.body.year,
     country: req.body.country,
@@ -77,6 +77,6 @@ exports.deleteTVShow = function (req, res) {
     tvshow.remove(function (err) {
       if (err) return res.status(500).send(err.message);
       res.status(200).send();
-    })
+    });
   });
 };

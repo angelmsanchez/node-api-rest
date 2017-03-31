@@ -1,0 +1,18 @@
+{
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "no-console": 0,
+    "max-len": [2, 140],
+    "space-before-blocks": [2, "always"],
+    "semi": [2, "always"],
+    "no-var": 2,
+    "prefer-const": 2,
+    "keyword-spacing": 2
+  },
+  "env": {
+    "node": true
+  }
+}

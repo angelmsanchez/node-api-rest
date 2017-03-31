@@ -1,8 +1,8 @@
-var userContactMock = require('./../mocks/user-contact');
-var userAdminMock = require('./../mocks/user-admin');
-var userDashboardMock = require('./../mocks/user-dashboard');
-var userFixMock = require('./../mocks/user-fix');
-var userSupervisorMock = require('./../mocks/user-supervisor');
+const userContactMock = require('./../mocks/user-contact');
+const userAdminMock = require('./../mocks/user-admin');
+const userDashboardMock = require('./../mocks/user-dashboard');
+const userFixMock = require('./../mocks/user-fix');
+const userSupervisorMock = require('./../mocks/user-supervisor');
 
 //GET - Return all users contacts 
 exports.getUserContact = function (req, res) {

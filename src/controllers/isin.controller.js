@@ -1,4 +1,4 @@
-var isinMock = require('./../mocks/isin');
+const isinMock = require('./../mocks/isin');
 
 //GET - Return all isin 
 exports.getIsin = function (req, res) {

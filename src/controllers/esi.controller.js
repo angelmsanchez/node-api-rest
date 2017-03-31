@@ -1,4 +1,4 @@
-var esiMock = require('./../mocks/esis');
+const esiMock = require('./../mocks/esis');
 
 //GET - Return all esis 
 exports.listEsi = function (req, res) {
